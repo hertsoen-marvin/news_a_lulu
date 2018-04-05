@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Projet mobile</string>
+    <string name="action_remove_all">Supprimer tout</string>
+    <string name="hint">Nom de la news</string>
+    <string name="btn">Rechercher </string>
+    <string name="dialog_message">Voulez-vous vraiment supprimer cette liste ? </string>
+    <string name="dialog_title">Confirmation</string>
+    <string name="alert_ok">Oui</string>
+    <string name="alert_nok">Non</string>
+    <string name="action_search">Chercher</string>
+    <string name="google_search">Rechercher avec Google</string>
+    <string name="maps_find">Trouver dans Maps</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
