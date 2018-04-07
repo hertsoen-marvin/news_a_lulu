@@ -11,13 +11,16 @@ public class RowItems {
 
     private String imageURL;
 
-    public RowItems(String title,String resume,String author, String imageURL)
+    private String sourceURL;
+
+    public RowItems(String title,String resume,String author, String imageURL, String sourceURL)
     {
         this.title = title;
         this.resume = resume;
         this.author = author;
 
         this.imageURL = imageURL;
+        this.sourceURL = sourceURL;
     }
 
     public String getTitle()
@@ -56,6 +59,14 @@ public class RowItems {
     public void setImageURL(String imageURL)
     {
         this.imageURL = imageURL;
+    }
+
+    public String getSourceURL() {
+        return sourceURL;
+    }
+
+    public void setSourceURL(String sourceURL) {
+        this.sourceURL = sourceURL;
     }
 
 }

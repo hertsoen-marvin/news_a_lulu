@@ -89,7 +89,7 @@ public class GetJSON extends AsyncTask<Void, Void, Void> {
                     String urlToImage = c.getString("urlToImage");
 
                     // adding contact to contact list
-                    al.add(new RowItems(title,resume,author,urlToImage));
+                    al.add(new RowItems(title,resume,author,urlToImage, url));
                 }
             } catch (final JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());

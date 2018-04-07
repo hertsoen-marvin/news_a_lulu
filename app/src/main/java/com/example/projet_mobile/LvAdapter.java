@@ -1,12 +1,15 @@
 package com.example.projet_mobile;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.QuickContactBadge;
 import android.widget.TextView;
 
@@ -27,6 +30,9 @@ public class LvAdapter extends ArrayAdapter<RowItems>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        //copie de position pour pouvoir l'utiliser dans le setOnClickListener
+        final int copiePosition = position;
+
         // 1. Create inflater
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -42,6 +48,15 @@ public class LvAdapter extends ArrayAdapter<RowItems>{
         ImageView imageView = (ImageView) rowView.findViewById(R.id.illustration);
 
         // 4. Set the text for textView
+        rowView.setOnClickListener(new View.OnClickListener() { //click sur l'item
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), webPage.class);
+                //sauvegarde de l'url sous la clé "url"
+                intent.putExtra("url", itemsArrayList.get(copiePosition).getSourceURL());
+                getContext().startActivity(intent); //démarrage de l'activité "webView"
+            }
+        });
         title.setText(itemsArrayList.get(position).getTitle());
         resume.setText(itemsArrayList.get(position).getResume());
         author.setText(itemsArrayList.get(position).getAuthor());
