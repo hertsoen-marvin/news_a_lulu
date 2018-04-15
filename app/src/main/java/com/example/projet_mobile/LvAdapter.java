@@ -44,6 +44,7 @@ public class LvAdapter extends ArrayAdapter<RowItems>{
         TextView title = (TextView) rowView.findViewById(R.id.title);
         TextView resume = (TextView) rowView.findViewById(R.id.resume);
         TextView author = (TextView) rowView.findViewById(R.id.author);
+        final TextView read = (TextView) rowView.findViewById(R.id.read);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.illustration);
 
@@ -52,6 +53,8 @@ public class LvAdapter extends ArrayAdapter<RowItems>{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), webPage.class);
+                //remplissage du TextView "view"
+                read.setText("Lu !");
                 //sauvegarde de l'url sous la clé "url"
                 intent.putExtra("url", itemsArrayList.get(copiePosition).getSourceURL());
                 getContext().startActivity(intent); //démarrage de l'activité "webView"
